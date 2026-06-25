@@ -1,46 +1,67 @@
 # Barber Prime
 
-Landing page profissional para uma barbearia fictícia chamada **Barber Prime**, posicionada como uma barbearia premium em Vila Velha.
+Landing page profissional para barbearia — demonstra a entrega típica para um pequeno negócio local que precisa de presença digital e geração de leads pelo WhatsApp.
 
-## Descrição
+![Em produção](https://img.shields.io/badge/status-live-brightgreen)
 
-O projeto simula uma página comercial real para pequenos negócios locais, com foco em apresentação de serviços, prova social e agendamento pelo WhatsApp.
+## Demo
 
-A proposta é demonstrar uma landing page simples, responsiva e vendável para barbearias, salões masculinos ou negócios locais que precisam de presença digital direta.
-
-## Tecnologias usadas
-
-- HTML5
-- CSS3
-- JavaScript puro
-- Google Maps Embed
-- Imagens demonstrativas externas
+| | URL |
+|---|---|
+| **Site** | https://landing-barber-prime.vercel.app/ |
 
 ## Funcionalidades
 
-- Navbar fixa com navegação por seções
-- Menu responsivo para celular
-- Hero com chamada comercial e botão de agendamento
-- Cards de serviços com preço, tempo estimado e CTA
-- Galeria responsiva de imagens
+- Hero com chamada comercial e CTA direto para WhatsApp
+- Navbar fixa com menu responsivo e animação mobile
+- Cards de serviços com preço, tempo estimado e botão de agendamento
+- Galeria de imagens responsiva
 - Seção institucional sobre a barbearia
 - Depoimentos com avatares de iniciais
-- Seção de contato com endereço, horário e WhatsApp
-- Mapa embutido
-- Botão flutuante de WhatsApp
-- Scroll suave
-- Estados de foco para acessibilidade
+- Seção de contato com endereço, horário e mapa embutido
+- Botão flutuante de WhatsApp visível em toda a página
+- Ancoragem suave entre seções
+- Meta description com cidade para SEO local
 
-## Objetivo do projeto
+## Tecnologias
 
-Este projeto foi criado para portfólio freelancer, mostrando a capacidade de construir uma landing page profissional para um negócio local usando apenas HTML, CSS e JavaScript.
+- HTML5, CSS3, JavaScript vanilla
+- Google Maps Embed
+- Deploy: Vercel
 
-O foco é entregar uma página rápida, clara e orientada à conversão, com visual premium e chamada direta para agendamento pelo WhatsApp.
+## Screenshots
 
-## Link do deploy
+### Hero — desktop
+![Hero desktop](docs/screenshots/hero-desktop.png)
 
-https://landing-barber-prime.vercel.app/
+### Hero — mobile
+![Hero mobile](docs/screenshots/hero-mobile.png)
 
-## Observação
+### Serviços com preços
+![Serviços](docs/screenshots/servicos-desktop.png)
 
-As imagens utilizadas são demonstrativas e vêm de fontes externas. Em um projeto real, elas devem ser substituídas por fotos próprias da barbearia ou imagens licenciadas para uso comercial.
+### Footer e contato
+![Footer](docs/screenshots/footer-desktop.png)
+
+## Como rodar localmente
+
+```bash
+git clone https://github.com/RhanielRodri/landing-barber-prime.git
+cd landing-barber-prime
+```
+
+Abra `index.html` diretamente no navegador. Sem dependências, sem build.
+
+## O que este projeto demonstra
+
+- **Layout orientado à conversão**: cada seção tem um CTA claro; o botão de WhatsApp permanece acessível em toda a rolagem
+- **Menu mobile com JS puro**: animação de abertura/fechamento sem framework
+- **SEO local**: meta description com cidade e região para indexação orgânica local
+- **Google Maps Embed sem API paga**: iframe nativo com localização real
+- **Design responsivo sem CSS framework**: breakpoints em CSS puro, mobile-first
+
+## Autor
+
+Desenvolvido por Rhaniel Rodrigues.
+
+GitHub: https://github.com/RhanielRodri
