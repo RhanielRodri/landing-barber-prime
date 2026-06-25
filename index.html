@@ -9,6 +9,31 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://www.google.com">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      opacity: 0.45;
+      padding: 0;
+      color: inherit;
+    }
+    .lang-toggle button.lang-active {
+      font-weight: 800;
+      opacity: 1;
+    }
+    .lang-toggle span {
+      opacity: 0.3;
+    }
+  </style>
 </head>
 <body>
   <header class="header" id="header">
@@ -17,18 +42,25 @@
         <span>Barber</span> Prime
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+      <button class="menu-toggle" type="button" data-i18n-aria="aria_menu_open" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#inicio" data-i18n="nav_home">Início</a></li>
+        <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
+        <li><a href="#galeria" data-i18n="nav_gallery">Galeria</a></li>
+        <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
+        <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
+        <li>
+          <div class="lang-toggle" style="padding: 0 8px;">
+            <button id="langPT" type="button" class="lang-active" aria-pressed="true">PT</button>
+            <span>|</span>
+            <button id="langEN" type="button" aria-pressed="false">EN</button>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -37,70 +69,70 @@
     <section class="hero" id="inicio">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <p class="section-kicker">Projeto demonstrativo de barbearia premium</p>
-        <h1>Seu estilo começa com um bom corte</h1>
-        <p>Atendimento com hora marcada, acabamento preciso e uma experiência pensada para homens que valorizam cuidado, praticidade e presença.</p>
-        <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar agora</a>
+        <p class="section-kicker" data-i18n="hero_kicker">Projeto demonstrativo de barbearia premium</p>
+        <h1 data-i18n="hero_title">Seu estilo começa com um bom corte</h1>
+        <p data-i18n="hero_desc">Atendimento com hora marcada, acabamento preciso e uma experiência pensada para homens que valorizam cuidado, praticidade e presença.</p>
+        <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="hero_cta">Agendar agora</a>
       </div>
     </section>
 
     <section class="section services" id="servicos">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Serviços</p>
-          <h2>Cortes, barba e cuidados masculinos com padrão profissional</h2>
+          <p class="section-kicker" data-i18n="services_kicker">Serviços</p>
+          <h2 data-i18n="services_title">Cortes, barba e cuidados masculinos com padrão profissional</h2>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
             <div>
               <div class="service-icon" aria-hidden="true">✂</div>
-              <h3>Corte masculino</h3>
-              <p class="service-description">Corte personalizado com acabamento profissional.</p>
+              <h3 data-i18n="svc1_name">Corte masculino</h3>
+              <p class="service-description" data-i18n="svc1_desc">Corte personalizado com acabamento profissional.</p>
             </div>
             <div class="service-footer">
-              <p class="service-price">A partir de R$ 35</p>
+              <p class="service-price" data-i18n="svc1_price">A partir de R$ 35</p>
               <span class="service-time">40 min</span>
-              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20corte%20masculino%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar</a>
+              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20corte%20masculino%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="svc_book">Agendar</a>
             </div>
           </article>
 
           <article class="service-card">
             <div>
               <div class="service-icon" aria-hidden="true">✦</div>
-              <h3>Barba completa</h3>
-              <p class="service-description">Modelagem, toalha quente e finalização.</p>
+              <h3 data-i18n="svc2_name">Barba completa</h3>
+              <p class="service-description" data-i18n="svc2_desc">Modelagem, toalha quente e finalização.</p>
             </div>
             <div class="service-footer">
-              <p class="service-price">A partir de R$ 30</p>
+              <p class="service-price" data-i18n="svc2_price">A partir de R$ 30</p>
               <span class="service-time">30 min</span>
-              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20barba%20completa%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar</a>
+              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20barba%20completa%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="svc_book">Agendar</a>
             </div>
           </article>
 
           <article class="service-card">
             <div>
               <div class="service-icon" aria-hidden="true">★</div>
-              <h3>Combo corte + barba</h3>
-              <p class="service-description">Pacote completo para renovar o visual.</p>
+              <h3 data-i18n="svc3_name">Combo corte + barba</h3>
+              <p class="service-description" data-i18n="svc3_desc">Pacote completo para renovar o visual.</p>
             </div>
             <div class="service-footer">
-              <p class="service-price">A partir de R$ 60</p>
+              <p class="service-price" data-i18n="svc3_price">A partir de R$ 60</p>
               <span class="service-time">1h</span>
-              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20o%20combo%20corte%20e%20barba%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar</a>
+              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20o%20combo%20corte%20e%20barba%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="svc_book">Agendar</a>
             </div>
           </article>
 
           <article class="service-card">
             <div>
               <div class="service-icon" aria-hidden="true">◆</div>
-              <h3>Progressiva masculina</h3>
-              <p class="service-description">Redução de volume e alinhamento dos fios.</p>
+              <h3 data-i18n="svc4_name">Progressiva masculina</h3>
+              <p class="service-description" data-i18n="svc4_desc">Redução de volume e alinhamento dos fios.</p>
             </div>
             <div class="service-footer">
-              <p class="service-price">A partir de R$ 80</p>
+              <p class="service-price" data-i18n="svc4_price">A partir de R$ 80</p>
               <span class="service-time">1h30</span>
-              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20progressiva%20masculina%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar</a>
+              <a class="btn btn-small" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20progressiva%20masculina%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="svc_book">Agendar</a>
             </div>
           </article>
         </div>
@@ -110,17 +142,17 @@
     <section class="section gallery-section" id="galeria">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Galeria</p>
-          <h2>Referências de corte, barba e acabamento</h2>
+          <p class="section-kicker" data-i18n="gallery_kicker">Galeria</p>
+          <h2 data-i18n="gallery_title">Referências de corte, barba e acabamento</h2>
         </div>
 
         <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80" alt="Barbeiro fazendo corte masculino" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80" alt="Barbearia com cadeira profissional" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80" alt="Corte masculino com acabamento" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80" alt="Cliente em atendimento na barbearia" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=80" alt="Barbeiro alinhando barba" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" alt="Ambiente interno de barbearia moderna" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_1" alt="Barbeiro fazendo corte masculino" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_2" alt="Barbearia com cadeira profissional" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_3" alt="Corte masculino com acabamento" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_4" alt="Cliente em atendimento na barbearia" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_5" alt="Barbeiro alinhando barba" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" data-i18n-alt="gallery_alt_6" alt="Ambiente interno de barbearia moderna" loading="lazy">
         </div>
       </div>
     </section>
@@ -131,10 +163,10 @@
           <img src="https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&w=1000&q=80" alt="Interior de barbearia premium" loading="lazy">
         </div>
         <div class="about-content">
-          <p class="section-kicker">Sobre nós</p>
-          <h2>Sobre a Barber Prime</h2>
-          <p>A Barber Prime é uma barbearia criada para homens que valorizam atendimento pontual, acabamento bem feito e uma experiência confortável. Trabalhamos com cortes masculinos, barba, combos e cuidados capilares, sempre com atenção ao estilo de cada cliente.</p>
-          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar atendimento</a>
+          <p class="section-kicker" data-i18n="about_kicker">Sobre nós</p>
+          <h2 data-i18n="about_title">Sobre a Barber Prime</h2>
+          <p data-i18n="about_desc">A Barber Prime é uma barbearia criada para homens que valorizam atendimento pontual, acabamento bem feito e uma experiência confortável. Trabalhamos com cortes masculinos, barba, combos e cuidados capilares, sempre com atenção ao estilo de cada cliente.</p>
+          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="about_cta">Agendar atendimento</a>
         </div>
       </div>
     </section>
@@ -142,30 +174,30 @@
     <section class="section testimonials">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Depoimentos</p>
-          <h2>Clientes que voltam pelo cuidado no detalhe</h2>
+          <p class="section-kicker" data-i18n="testimonials_kicker">Depoimentos</p>
+          <h2 data-i18n="testimonials_title">Clientes que voltam pelo cuidado no detalhe</h2>
         </div>
 
         <div class="testimonials-grid">
           <article class="testimonial-card">
             <div class="testimonial-avatar" aria-hidden="true">RM</div>
             <h3>Rafael M.</h3>
-            <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-            <p>“Atendimento excelente, corte muito bem feito e ambiente confortável.”</p>
+            <div class="stars" data-i18n-aria="testimonial_stars_aria" aria-label="Avaliação 5 de 5">★★★★★</div>
+            <p data-i18n="testimonial_1">"Atendimento excelente, corte muito bem feito e ambiente confortável."</p>
           </article>
 
           <article class="testimonial-card">
             <div class="testimonial-avatar" aria-hidden="true">LA</div>
             <h3>Lucas A.</h3>
-            <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-            <p>“Sempre saio satisfeito. Profissionais pontuais e muito cuidadosos.”</p>
+            <div class="stars" data-i18n-aria="testimonial_stars_aria" aria-label="Avaliação 5 de 5">★★★★★</div>
+            <p data-i18n="testimonial_2">"Sempre saio satisfeito. Profissionais pontuais e muito cuidadosos."</p>
           </article>
 
           <article class="testimonial-card">
             <div class="testimonial-avatar" aria-hidden="true">AS</div>
             <h3>André S.</h3>
-            <div class="stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-            <p>“A melhor barbearia da região. Recomendo o combo corte e barba.”</p>
+            <div class="stars" data-i18n-aria="testimonial_stars_aria" aria-label="Avaliação 5 de 5">★★★★★</div>
+            <p data-i18n="testimonial_3">"A melhor barbearia da região. Recomendo o combo corte e barba."</p>
           </article>
         </div>
       </div>
@@ -174,19 +206,19 @@
     <section class="section contact" id="contato">
       <div class="container contact-grid">
         <div class="contact-content">
-          <p class="section-kicker">Contato</p>
-          <h2>Reserve seu horário pelo WhatsApp</h2>
-          <p class="contact-intro">Fale com a Barber Prime, escolha o serviço e confirme o melhor horário para o seu atendimento.</p>
+          <p class="section-kicker" data-i18n="contact_kicker">Contato</p>
+          <h2 data-i18n="contact_title">Reserve seu horário pelo WhatsApp</h2>
+          <p class="contact-intro" data-i18n="contact_intro">Fale com a Barber Prime, escolha o serviço e confirme o melhor horário para o seu atendimento.</p>
           <div class="contact-list">
-            <p><strong>Endereço:</strong> Rua das Palmeiras, 123 - Centro, Vila Velha - ES</p>
-            <p><strong>Horário de atendimento:</strong> Segunda a sábado, das 9h às 20h</p>
-            <p><strong>WhatsApp:</strong> (00) 00000-0000</p>
+            <p><strong data-i18n="contact_address_label">Endereço:</strong> Rua das Palmeiras, 123 - Centro, Vila Velha - ES</p>
+            <p><strong data-i18n="contact_hours_label">Horário de atendimento:</strong> <span data-i18n="contact_hours">Segunda a sábado, das 9h às 20h</span></p>
+            <p><strong data-i18n="contact_whatsapp_label">WhatsApp:</strong> (00) 00000-0000</p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n="contact_cta">Agendar pelo WhatsApp</a>
         </div>
 
         <div class="map-wrapper">
-          <iframe title="Mapa da Barber Prime em Vila Velha" src="https://www.google.com/maps?q=Centro,Vila%20Velha,ES&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe data-i18n-iframe-title="map_title" title="Mapa da Barber Prime em Vila Velha" src="https://www.google.com/maps?q=Centro,Vila%20Velha,ES&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -196,29 +228,30 @@
     <div class="container footer-grid">
       <div>
         <a class="logo footer-logo" href="#inicio"><span>Barber</span> Prime</a>
-        <p>Barber Prime © 2026. Todos os direitos reservados.</p>
+        <p data-i18n="footer_copy">Barber Prime © 2026. Todos os direitos reservados.</p>
       </div>
 
       <div>
-        <h3>Links rápidos</h3>
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
+        <h3 data-i18n="footer_links_title">Links rápidos</h3>
+        <a href="#inicio" data-i18n="nav_home">Início</a>
+        <a href="#servicos" data-i18n="nav_services">Serviços</a>
+        <a href="#galeria" data-i18n="nav_gallery">Galeria</a>
+        <a href="#sobre" data-i18n="nav_about">Sobre</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
       </div>
 
       <div>
-        <h3>Redes sociais</h3>
-        <p>Instagram: projeto demonstrativo</p>
-        <p>Facebook: projeto demonstrativo</p>
+        <h3 data-i18n="footer_social_title">Redes sociais</h3>
+        <p data-i18n="footer_social_ig">Instagram: projeto demonstrativo</p>
+        <p data-i18n="footer_social_fb">Facebook: projeto demonstrativo</p>
         <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">WhatsApp</a>
+  <a class="whatsapp-float" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barber%20Prime." target="_blank" rel="noopener" data-i18n-aria="aria_whatsapp" aria-label="Agendar pelo WhatsApp">WhatsApp</a>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
